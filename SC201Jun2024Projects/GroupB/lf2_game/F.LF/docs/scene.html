@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>F.LF/scene</title>
+<script src="projectfdocs.js"></script>
+<xmp>
+# Scene
+Scene is the scene graph which is responsible of keep tracking active objects in the scene and perform collision detection.
+
+### coordinate system
+![](https://docs.google.com/drawings/d/1vQ86ddiZAhNBxPaeEcfV2k4z73_K1QyV6nGLK1VXN-g/pub?w=404&h=203)
+
+world to screen projection equation:
+```
+screen-x = object-x;
+screen-y = object-y + object-z;
+```
+
+### volume
+A volume is a 8-tuple.
+```
+{
+	x, y, z, vx, vy, w, h, zwidth
+}
+```
+
+![](https://docs.google.com/drawings/d/1F1biPJanHJPjDXk0ymoKaOxirDMKw17HVOquqO5rbQc/pub?w=669&h=680)
+
+### scene query (collision detection)
+Each process makes a __scene query__ to ask whether a volume of itself intersects volumes of other living objects in the scene. The scene manager returns an array of intersected living objects, empty array if no intersection. Queries can be submitted with parameters like specific team or volume type (like itr:kind:2).
+
+</xmp>
+</html>

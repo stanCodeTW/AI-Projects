@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<title>F.LF/Develop</title>
+<style>
+.green
+{
+	color:#FFF; padding:0 10px; border-radius:5px; background: #0C0;
+}
+.yellow
+{
+	color:#FFF; padding:0 10px; border-radius:5px; background: #CC0;
+}
+</style>
+<script src="projectfdocs.js"></script>
+<xmp>
+
+# Architecture
+
+Project F.LF is divided into two repositories, [F.LF]() and [LF2_19](). F.LF is the game engine which implements ___the LF2 standard___ and provides gaming functionalities. LF2_19 contains material (sprites, data, sound, etc) converted from original LF2. Such that F.LF is source code only and contains no third party copyrighted material. 
+
+F.LF should be deployable on a web server taking advantage of latest web technology, while still playable on a local file system.
+
+F.LF is to be hackable. The architecture answers yes to the following questions:
+
+- can I customize behavior by changing a parameter in a config file?
+- can I create a new component by adding an entry to a list?
+- can I replace a module by implementing one with same interface?
+
+### HTML5
+
+#### Desktop
+The officially supported desktop browsers are latest Chrome, Firefox and IE. F.LF is tested in each of these browsers before release. Legacy browser versions will not be supported. Under the current state of the art, Chrome gives the best performance, with IE10 the second, and Firefox sometimes lag.
+
+#### Mobile
+The officially supported platform is Galaxy S3+Chrome. This is a baseline, and lower end devices will not be supported.
+
+for more see [HTML5.html](HTML5.html).
+
+<a id='roadmap'></a>
+# Roadmap
+
+Here lists the unimplemented features.
+
+### the LF2 standard
+- characters
+	- support all LF2 1.9 characters (currently only Bandit, Deep, John, Dennis, Woody and Davis are implmented)
+- weapons
+	- stick, hoe and stone implemented
+- drinks
+- specialattack
+	- of the remaining characters
+- effects
+	- fire and ice
+
+### engine components
+- record & playback
+	- data format
+	- standalone player
+	- platform to upload
+
+- gamepad support
+	- HTML5 gamepad API
+
+### application
+- game modes
+	- stage mode
+	- (extended) story mode
+
+### documentation compilation
+- the LF2 standard <span class='yellow'>in progress</span>
+- hands on F.LF
+
+# Engineering process
+
+### Clean room implementation
+F.LF attempts a clean room implementation of LF2. A quote from [Wikipedia](http://en.wikipedia.org/wiki/Clean_room_design)
+> Clean room design is the method of copying a design by reverse engineering and then recreating it without infringing any of the copyrights and trade secrets associated with the original design. Clean room design is useful as a defense against copyright and trade secret infringement because it relies on independent invention.
+
+> Typically, a clean room design is done by having someone examine the system to be reimplemented and having this person write a specification. This specification is then reviewed by a lawyer to ensure that no copyrighted material is included. The specification is then implemented by a team with no connection to the original examiners.
+
+Also read these [answers](http://ask.slashdot.org/story/00/06/09/0136236/what-is-a-clean-room-implementation).
+
+Ideally the one who examine LF2 and produce the specification should be a different person from the one who implement it. But we are short of programmers that sometimes they may be the same person.
+
+The aim of Project F is to produce a completely free code base for the community. It is critical to maintain the cleanliness of the F.LF repository. Though, the publishing of F.LF in bundle with LF2 materials could be copyright infringement.
+
+The bottom line is, no trade secret or proprietary source code can enter the F.LF repository. the following rules are extremely important, and have to be beared in mind.
+
+- __do not state the long form of LF2. it could be Loyal Fighter 2 or anything__
+- __do not look into the disassembly of LF2__
+
+### Collaboration model
+- [github help/fork & pull](https://help.github.com/articles/using-pull-requests)
+- do development on dev branchs and pull `origin/master` frequently. resolve conflicts as soon as possible.
+- [dchelimsky/Topic Branches](https://github.com/dchelimsky/rspec/wiki/Topic-Branches)
+- only make pull request on topic branches, that is, branch with only one important change.
+
+	> you can cherry-pick the important updates to a separate branch and make a pull request on that branch (try [this](http://stackoverflow.com/questions/5256021/send-a-pull-request-on-github-for-only-latest-commit))
+- only make pull request when reasonable progress is being made
+	- program code should be functional and slightly tested
+- do not include personal code playground or unrelated files in a pull request.
+
+### Workflow
+
+The top-down engineering process starts from playing LF2, observing its behaviour, and write a specification. The specification is then implemented.
+
+The bottom-up engineering process starts implementing a system, and observe the behavioural difference from LF2, and improve the implementation. If everything is okay, then write a specification.
+
+Both processes produce a pair of specification and implementation as the end product. A task is said to be finished only if the specification and implementation comply to each other and they both comply to LF2 behavior to a high degree.
+
+### Test Driven Development
+
+A unit test suite is specifically developed for F.LF to measure compatibility with LF2. The automated testing should be run frequently to ensure code changes do not break previsouly working cases. For more information, read [unit_test_suite](unit_test_suite.html).
+
+### Build system
+F.LF employs [requirejs](http://requirejs.org/) for dependency management, and takes advantage of requirejs's optimization tool `r.js` to combine and minify all scripts together into a single script file. However, only program scripts are combined, content scripts (such as data files) are loaded dynamically.
+
+</xmp>
+</html>

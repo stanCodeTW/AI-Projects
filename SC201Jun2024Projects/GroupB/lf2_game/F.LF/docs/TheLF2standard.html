@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<title>F.LF/The LF2 standard</title>
+<script src="projectfdocs.js"></script>
+<xmp>
+# The LF2 standard
+
+## Overview
+
+The LF2 standard is a software specification defining the requirements, functions, mechanism, system design, data format and operation of a fighter game. The LF2 standard is an attempt to formalize and generalize LF2. It is derived from observations to the original LF2 without looking into its source code or disassembly. Indeed, information derived from observation is never enough when it comes to system design. A large portion of knowledge presented here is original work.
+
+The LF2 standard is _meant to be_ faithful to LF2, but modification is made where appropriate:
+
+- Extended Standard
+
+> Designs that do not come from the original LF2 are marked as __extended standard__. These extensions are necessary for flexibility concerns. There should be no compatibility issue with original LF2 because LF2 simply hard coded the functionality and does not allow customization. For example, effects data file is extended standard.
+
+- Adapted Standard
+
+> Designs that are different from the original LF2 deliberately are marked as __adapted standard__. These adaptation are necessary for technological concerns. Without these adaptation, F.LF may not function or may function poorly. For example, bmp must be converted to png for its compression and cross platform ability.
+
+### Computer simulation
+Every game of LF2 is simulating a reality with its own natural and physical laws. There are consequences and implications of F.LF being a computer simulation program. The two major problems are determinism and synchronization. Some of the generic subject matters are discussed in Project F:
+
+- [Computer simulation - Notion and terminologies](http://project--f.blogspot.hk/2013/04/computer-simulation.html)
+- [Time model and determinism - why use a fixed interval game clock](http://project--f.blogspot.hk/2013/04/time-model-and-determinism.html)
+
+## Concepts and Mechanisms
+
+- living objects
+	- properties
+	- states & frames
+	- direction
+	- sprites
+- characters
+	- states
+	- itr
+- weapons
+- specialattacks
+- frame transition
+	- wait, next
+	- lock and authority
+- team
+	- events that will trigger team change
+- combo
+	- key sequence
+	- simultaneous key press
+- effects
+	- pervasive effects
+		- fire, ice
+- processing pipeline
+	- event model
+	- TU, trans
+	- other events
+	- scheduling
+- physics
+	- coordinate system
+		- position and center of mass
+		- volume
+		- world-to-screen projection
+		- coincide issues
+			- XY coincide and XZ coincide
+	- dynamics
+		- force (dvx,dvy,dvz)
+		- mass
+		- gravity
+		- friction
+</xmp>
+</html>
