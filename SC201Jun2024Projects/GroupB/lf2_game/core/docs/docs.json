@@ -1,0 +1,10 @@
+{
+    "title": "F.LF/core",
+    "output": "docs.html",
+    "directory":
+    [{
+    	"path": "../",
+    	"link": "../",
+    	"extension": [".js"]
+    }]
+}
