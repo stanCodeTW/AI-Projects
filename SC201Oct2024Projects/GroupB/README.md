@@ -4,9 +4,6 @@
 
 ---
 
-## 📺 Live Demo  
-![FinScope3D Preview](src/FinScope3D.mp4)
-
 ## 🌒 Preview (Dark Mode)
 
 ![FinScope3D Preview](src/FinScope3D.png)
