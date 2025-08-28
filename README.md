@@ -22,5 +22,5 @@
 <!-- END YOUTUBE-CARDS -->
 
 [<img src="https://custom-icon-badges.demolab.com/badge/-Subscribe%20For%20More-red?style=for-the-badge&logo=video&logoColor=white"/>](https://www.youtube.com/@stancode7228?sub_confirmation=1)
-[![Follow on Instagram](https://custom-icon-badges.demolab.com/badge/-Follow%20on%20Instagram-purple?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/@stancode_tw?sub_confirmation=1)
-[![Follow on Facebook](https://custom-icon-badges.demolab.com/badge/-Follow%20on%20Facebook-blue?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/@stancode.tw?sub_confirmation=1)
+[![Follow on Instagram](https://custom-icon-badges.demolab.com/badge/-Follow%20on%20Instagram-purple?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/stancode_tw?sub_confirmation=1)
+[![Follow on Facebook](https://custom-icon-badges.demolab.com/badge/-Follow%20on%20Facebook-blue?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/stancode.tw?sub_confirmation=1)
